@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpringBoot2.iml" filepath="$PROJECT_DIR$/SpringBoot2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-01-helloword/boot-01-helloworld.iml" filepath="$PROJECT_DIR$/boot-01-helloword/boot-01-helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot3-02-demo/boot3-02-demo.iml" filepath="$PROJECT_DIR$/boot3-02-demo/boot3-02-demo.iml" />
     </modules>
   </component>
 </project>
