@@ -19,27 +19,34 @@ import java.util.concurrent.TimeUnit;
  * @Datetime: 2023/06/04 13:42
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为MyConfig的配置类，用于自定义Spring MVC的配置，包括静态资源处理、拦截器配置和消息转换器配置
  */
 // @EnableWebMvc //禁用boot的默认配置
-@Configuration // 这是一个配置类,给容器中放一个 WebMvcConfigurer 组件，就能自定义底层
+@Configuration // 注解标识为一个配置类，用于自定义Spring MVC的配置
 public class MyConfig /* implements WebMvcConfigurer */ {
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
+        // 通过匿名内部类的方式实现了WebMvcConfigurer接口
         return new WebMvcConfigurer() {
             @Override
+            // 用于配置静态资源的处理
             public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                // 将/static/**路径映射到classpath:/a/和classpath:/b/下的静态资源，并设置缓存控制策略
                 registry.addResourceHandler("/static/**")
                         .addResourceLocations("classpath:/a/", "classpath:/b/")
                         .setCacheControl(CacheControl.maxAge(1180, TimeUnit.SECONDS));
             }
 
-            @Override // 配置拦截器
+            @Override
+            // 用于配置拦截器
             public void addInterceptors(InterceptorRegistry registry) {
+                // 未添加任何拦截器
             }
 
-            @Override   //配置一个能把对象转为yaml的messageConverter
+            @Override
+            // 用于配置消息转换器
             public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+                // 添加了一个自定义的MyYamlHttpMessageConverter，用于将对象转换为YAML格式
                 converters.add(new MyYamlHttpMessageConverter());
             }
         };

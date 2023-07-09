@@ -1,21 +1,22 @@
-# 1、k: v # k v 之间 是空格区分 k:
-# 2、属性有层级关系，使用下一行，空两个空格
-# 3、左侧对齐的代表同一层级的属性
+# 一个YAML格式的配置文件示例，用于配置应用程序的属性。
+# YAML是一种人类可读的数据序列化，格式它使用缩进和换行来表示层级关系
 ---
 server:
-  port: 9999
-
+  port: 12345 # 应用程序的服务器配置
 
 spring:
   servlet:
     multipart:
-      max-file-size: 10MB
+      max-file-size: 10MB # 设置了文件上传的最大大小为10MB
   data:
-    redis:
+    redis: # 定义Redis数据库的连接配置
       host: localhost
       port: 6379
+
+
 --- #下边是一个单独文档
 a: b
+# 定义一个名为person的对象
 person:
   name: '张三 \n 123'
   age: 18
@@ -42,11 +43,15 @@ person:
         dhhdh
         fjkdsl
         gflkd
+
+  # 一个列表，包含了多个狗的对象。每个狗对象有名字和年龄属性。
   dogs:
     - name: 小黑
       age: 3
     - name: 小白
       age: 2
+
+  # cats是一个对象，包含猫只两了的属性其中
   cats:
     c1:
       name: 小蓝

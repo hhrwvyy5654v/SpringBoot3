@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Scope;
  * @Datetime: 2023/06/04 00:15
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为AppConfig的配置类，用于配置应用程序的组件和属性绑定
  */
 
 /**
@@ -27,7 +27,7 @@ import org.springframework.context.annotation.Scope;
 @EnableConfigurationProperties(Sheep.class) // 导入第三方写好的组件进行属性绑定
 // SpringBoot默认只扫描自己主程序所在的包。如果导入第三方包，即使组件上标注了
 // @Component、@ConfigurationProperties 注解，也没用。因为组件都扫描不进来
-@SpringBootConfiguration // 这是一个配置类，替代以前的配置文件。配置类本身也是容器中的组件
+@SpringBootConfiguration // 表示这是一个配置类，替代以前的配置文件，配置类本身也是容器中的组件
 // @Configuration
 
 public class AppConfig {
@@ -46,7 +46,7 @@ public class AppConfig {
     @Scope("prototype")
     @Bean("userHaha") // 替代以前的Bean标签。 组件在容器中的名字默认是方法名，可以直接修改注解的值
     public User user01() {
-        var user = new User();
+        User user = new User();
         user.setId(1L);
         user.setName("张三");
         return user;

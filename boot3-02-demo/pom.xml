@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!--一个Maven项目的pom.xml文件，用于管理项目的依赖和构建配置-->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--Maven模型的版本号-->
     <modelVersion>4.0.0</modelVersion>
-
-
+    <!--父项目的配置，表示项目是一个子项目-->
     <parent>
+        <!--父项目的groupId，表示父项目的唯一标识符-->
         <groupId>org.springframework.boot</groupId>
+        <!--父项目的artifactId，表示父项目的唯一标识符-->
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!--父项目的版本号，表示使用的父项目版本-->
         <version>3.0.5</version>
+        <!--父项目的相对路径，表示父项目的pom.xml文件相对于当前项目的路径-->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-
-    <groupId>com.atguigu.boot</groupId>
+    <!--项目的唯一标识符-->
+    <groupId>org.example.boot</groupId>
+    <!--项目名称-->
     <artifactId>boot3-02-demo</artifactId>
+    <!--项目的版本号-->
     <version>0.0.1-SNAPSHOT</version>
+    <!--项目名称-->
     <name>boot3-02-demo</name>
+    <!--项目描述-->
     <description>boot3-02-demo</description>
 
 
+    <!--用于定义项目的属性-->
     <properties>
+        <!--定义Java版本-->
         <java.version>17</java.version>
     </properties>
 
 
     <dependencies>
+        <!--用于集成Thymeleaf模板引擎的场景启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
+        <!--用于开发Web应用的场景启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!--用于编写测试的场景启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <!--用于连接和管理数据库连接池的依赖-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -48,8 +60,11 @@
         </dependency>
     </dependencies>
 
+    <!--定义了项目的构建配置-->
     <build>
+        <!--定义了构建插件的配置-->
         <plugins>
+            <!--该插件的作用是将Spring Boot应用打包成可执行的jar文件，并提供了其他一些构建相关的功能-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

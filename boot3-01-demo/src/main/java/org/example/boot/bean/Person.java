@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @Component
 @ConfigurationProperties(prefix = "person") // 和配置文件person前缀的所有配置进行绑定
-@Data // 自动生成JavaBean属性的getter/setter
+@Data // // 注解自动生成getter、settertoString、、equals和hashCode等方法
 // @NoArgsConstructor //自动生成无参构造器
 // @AllArgsConstructor //自动生成全参构造器
 public class Person {

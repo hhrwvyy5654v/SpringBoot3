@@ -9,9 +9,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @Datetime: 2023/06/04 00:13
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为Sheep的Java类，用于表示羊的对象
  */
-@ConfigurationProperties(prefix = "sheep")
+
+@ConfigurationProperties(prefix = "sheep")  // 表示该类的属性可以从配置中文件读取，配置文件中的属性名以sheep为前缀
 public class Sheep {
     private Long id;
     private String name;

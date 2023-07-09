@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!--一个Maven项目的pom.xml文件，用于管理项目的依赖和构建配置-->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--Maven模型的版本号-->
     <modelVersion>4.0.0</modelVersion>
-
+    <!--父项目的配置，表示项目是一个子项目-->
     <parent>
+        <!--父项目的groupId，表示父项目的唯一标识符-->
         <groupId>org.springframework.boot</groupId>
+        <!--父项目的artifactId，表示父项目的唯一标识符-->
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!--父项目的版本号，表示使用的父项目版本-->
         <version>3.1.0</version>
+        <!--父项目的相对路径，表示父项目的pom.xml文件相对于当前项目的路径-->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!--项目的唯一标识符-->
     <groupId>org.example</groupId>
+    <!--项目名称-->
     <artifactId>boot3-03-logging</artifactId>
+    <!--项目的版本号-->
     <version>0.0.1-SNAPSHOT</version>
+    <!--项目名称-->
     <name>boot3-03-logging</name>
+    <!--项目描述-->
     <description>boot3-03-logging</description>
 
+    <!--用于定义项目的属性-->
     <properties>
+        <!--定义Java版本-->
         <java.version>17</java.version>
     </properties>
 
     <dependencies>
+        <!--Spring Boot的Web组件，提供了构建Web应用程序所需的一组库文件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--Spring Boot核心依赖项，它包括Spring框架的基本组件和其他常用库文件，如Jackson，Tomcat等-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <exclusions>
+                <!--通过exclusions标签排除其中的logging组件-->
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
@@ -37,17 +53,20 @@
             </exclusions>
         </dependency>
 
+        <!--Spring Boot的默认日志库，但在这里被排除在外，因为后面引入了Log4j2作为替代-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
+        <!--一个Java库，用于简化Java代码的编写-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <!--Spring Boot的测试组件，提供了一组库文件贺工具，用于编写和运行测试-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -56,13 +75,16 @@
 
     </dependencies>
 
+    <!--定义了项目的构建配置-->
     <build>
+        <!--定义了构建插件的配置-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
+                        <!--通过exclusions标签排除其中的logging组件,这样可以减小jar文件的大小,并减少应用程序的依赖项数量-->
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>

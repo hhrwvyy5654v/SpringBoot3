@@ -7,7 +7,7 @@ package org.example.boot.bean;
  * @Datetime: 2023/06/04 00:14
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为User的Java类，用于表示用户的对象
  */
 
 public class User {

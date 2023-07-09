@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!--一个 Schema-based配置的Spring配置文件-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="user" class="com.atguigu.boot.bean.User" scope="prototype">
+    <!--定义Bean对象user，class属性指定了类的全限定名,name属性指定要设置的属性名,prototype属性设置了作用域-->
+    <bean id="user" class="org.example.boot.bean.User" scope="prototype">
         <property name="id" value="1"></property>
         <property name="name" value="zhangsan"></property>
     </bean>
-
-    <bean id="cat" class="com.atguigu.boot.bean.Cat">
+    <!--定义Bean对象cat，class属性指定了类的全限定名,name属性指定要设置的属性名,prototype属性设置了作用域-->
+    <bean id="cat" class="org.example.boot.bean.Cat">
         <property name="id" value="1"></property>
         <property name="name" value="Tom"></property>
     </bean>

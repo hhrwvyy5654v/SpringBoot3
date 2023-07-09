@@ -10,6 +10,7 @@ package org.example.boot.bean;
  * @Description:
  */
 
+// @Component   // 表示该类是一个Spring组件，可以被自动扫描并注入到Spring容器中
 public class Pig {
     private Long id;
     private String name;

@@ -7,9 +7,10 @@ package org.example.boot.bean;
  * @Datetime: 2023/06/04 00:12
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为Dog的Java类，用于表示狗的对象
  */
 
+// @Component   // 表示该类是一个Spring组件，可以被自动扫描并注入到Spring容器中
 public class Dog {
     private  Long id;
     private String name;

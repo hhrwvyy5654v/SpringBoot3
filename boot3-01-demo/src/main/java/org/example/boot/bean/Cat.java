@@ -9,10 +9,10 @@ import lombok.Data;
  * @Datetime: 2023/06/03 22:47
  * @Author: HuangRongQuan
  * @Email: rongquanhuang01@gmail.com
- * @Description:
+ * @Description: 一个名为Cat的Java类，用于表示猫的信息
  */
 
-@Data
+@Data   // 注解自动生成getter、settertoString、、equals和hashCode等方法
 public class Cat {
     private String name;
     private Integer age;
